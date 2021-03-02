@@ -25,7 +25,7 @@
 
 ```
 
-##### this one is pretty basic. A title, joke and a date stamp with a button to recieve a text message of daily jokes...this option will be an extended goal.
+##### this one is pretty basic. A title, joke and a date stamp with a button to recieve a text message of daily jokes...this option will be an extended goal
 
 ![frame1](/readme_imgs/home.png)
 
@@ -47,7 +47,7 @@
 
 ![frame1](/readme_imgs/login.png)
 
-### Unless this is not yet a user, in that case...
+### Unless this is not yet a user, in that case
 
 ```sql
 
@@ -83,7 +83,8 @@
 
 ```sql
 
-   PUT/favorites/joke_id
+   GET/favorites
+   POST/favorites/joke_id
    PUT/???
 
 ```
