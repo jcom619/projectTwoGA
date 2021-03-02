@@ -30,6 +30,8 @@ app.get("/about", (req, res) => {
   res.render("pages/about");
 });
 
+// ============================================= //
+
 app.listen(PORT, () => {
   console.log(`port: ${PORT} you got served!!!`);
   rowdyResults;
