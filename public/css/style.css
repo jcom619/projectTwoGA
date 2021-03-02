@@ -1,0 +1,16 @@
+body {
+    background: goldenrod;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    top: 0;
+    width: 100%;
+}
+
+footer {
+    bottom: 0;
+}
