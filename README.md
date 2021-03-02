@@ -2,7 +2,7 @@
 
 ## SQL schema
 
-![frame1](/erd.png)
+![frame1](/readme_imgs/erd.png)
 
 *Sprints:*
 
@@ -27,7 +27,7 @@
 
 ##### this one is pretty basic. A title, joke and a date stamp with a button to recieve a text message of daily jokes...this option will be an extended goal.
 
-![frame1](/home.png)
+![frame1](/readme_imgs/home.png)
 
 ```sql
 
@@ -45,7 +45,7 @@
 
 ##### first page you should see is a login page with the option to click a button and sign up
 
-![frame1](/login.png)
+![frame1](/readme_imgs/login.png)
 
 ### Unless this is not yet a user, in that case...
 
@@ -65,7 +65,7 @@
 
 ##### this is the sign up page that you are directed to if you so choose to click the sign up button from frame one. In the case that you made a mistake by clicking the sign up, there is a button to direct you back to login
 
-![frame1](/signup.png)
+![frame1](/readme_imgs/signup.png)
 
 ```sql
 
@@ -77,7 +77,7 @@
 
 ##### A history of past funnies. mostly just an excuse to create a database
 
-![frame1](/archive.png)
+![frame1](/readme_imgs/archive.png)
 
 ## vote on a joke and/or save a joke?
 
@@ -90,10 +90,10 @@
 
 - ## favorites
 
-![frame1](/favorites.png)
+![frame1](/readme_imgs/favorites.png)
 
 - ## logout
 
-##### 
+#####
 
-![frame1](/logout.png)
+![frame1](/readme_imgs/logout.png)
