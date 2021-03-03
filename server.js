@@ -4,20 +4,17 @@ const expressLayouts = require("express-ejs-layouts");
 const app = express();
 const rowdy = require("rowdy-logger");
 const rowdyResults = rowdy.begin(app);
+const axios = require("axios");
 const PORT = process.env.PORT || 3000;
 
-// set the view engine to ejs
-// app.set("view engine", "ejs");
-
-// use res.render to load up an ejs view file
-
 // ============================================= //
-//                    STATIC FILES
+//                   STATIC FILES
 // ============================================= //
 
 app.use(express.static("public"));
 // CSS
 app.use("/css", express.static(__dirname + "public/css/"));
+app.use("/js", express.static(__dirname + "public/js/"));
 
 // TEMPLATE ENGINE
 app.set("view engine", "ejs");
@@ -26,9 +23,15 @@ app.use(expressLayouts);
 // ============================================= //
 //                      ROUTES
 // ============================================= //
-// index page
+
+// index/home page
 app.get("/", (req, res) => {
   res.render("pages/index");
+});
+
+// archive page
+app.get("/archived", (req, res) => {
+  res.render("pages/archived");
 });
 
 // about page
@@ -36,9 +39,15 @@ app.get("/about", (req, res) => {
   res.render("pages/about");
 });
 
-app.get("/archived", (req, res) => {
-  res.render("pages/archived");
+// favorites page
+app.get("/favorites", (req, res) => {
+  res.render("pages/about");
 });
+
+// API
+async function makeAFunny() {
+  const results = await axios.get();
+}
 
 // ============================================= //
 
