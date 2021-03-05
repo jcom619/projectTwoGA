@@ -15,6 +15,7 @@
 
 *Stretch:*
 
+- Create function to check if joke is already archived
 - Implement add joke
 - Create content restrictions for added jokes
 - Add text API

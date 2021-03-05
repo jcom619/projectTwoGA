@@ -1,43 +1,60 @@
-$('.form').find('input, textarea').on('keyup blur focus', function (e) {
-  
-  var $this = $(this),
-      label = $this.prev('label');
 
-	  if (e.type === 'keyup') {
-			if ($this.val() === '') {
-          label.removeClass('active highlight');
-        } else {
-          label.addClass('active highlight');
-        }
-    } else if (e.type === 'blur') {
-    	if( $this.val() === '' ) {
-    		label.removeClass('active highlight'); 
-			} else {
-		    label.removeClass('highlight');   
-			}   
-    } else if (e.type === 'focus') {
-      
-      if( $this.val() === '' ) {
-    		label.removeClass('highlight'); 
-			} 
-      else if( $this.val() !== '' ) {
-		    label.addClass('highlight');
-			}
-    }
 
-});
+<script>
+// ===============================================
+                       new
+// ===============================================
+let theForm = document.querySelector(".nav");
+document.getelementById('show-login').addEventListener('click', showLogin, false);
+document.getelementById('show-signup').addEventListener('click', showSignup, false);
+document.getelementById('show-thank-you').addEventListener('click', showThankYou, false);
 
-$('.tab a').on('click', function (e) {
-  
-  e.preventDefault();
-  
-  $(this).parent().addClass('active');
-  $(this).parent().siblings().removeClass('active');
-  
-  target = $(this).attr('href');
 
-  $('.tab-content > div').not(target).hide();
-  
-  $(target).fadeIn(600);
-  
-});
+theForm.addEventListener('click', theClickIsGnarly, false)
+
+function theClickIsGnarly(e) {
+   if(e.target !== e.currentTarget) {
+      let theGnarlyClick = e.Target.id;
+      let prism = document.querySelector(".rec-prism");
+   }
+   e.stopPropagation();
+}
+
+function showSignup(){
+   prism.style.transform = "translateZ(-100px) rotateY( -90deg)";
+}
+
+function showLogin(){
+   prism.style.transform = "translateZ(-100px)";
+}
+function showThankYou(){
+  prism.style.transform = "translateZ(-100px) rotateX( 90deg)";
+}
+// document.getelementById('show-forgot-password').addEventListener('click', ForgotPassword, false);
+// document.getelementById('show-subscribe').addEventListener('click', Subscribe, false);
+// document.getelementById('show-contact-us').addEventListener('click', ContactUs, false);
+
+theClickIsGnarly()
+// ===============================================
+                     old
+// ===============================================
+//    let prism = document.querySelector(".rec-prism");
+
+// function showSignup(){
+//   prism.style.transform = "translateZ(-100px) rotateY( -90deg)";
+// }
+// function showLogin(){
+//   prism.style.transform = "translateZ(-100px)";
+//  }
+// function showForgotPassword(){
+//   prism.style.transform = "translateZ(-100px) rotateY( -180deg)";
+// }
+
+// function showSubscribe(){
+//   prism.style.transform = "translateZ(-100px) rotateX( -90deg)";
+// }
+
+// function showContactUs(){
+//   prism.style.transform = "translateZ(-100px) rotateY( 90deg)";
+// }
+</script>

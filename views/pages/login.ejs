@@ -1,79 +1,126 @@
-<div class="form">
-      
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
-      </ul>
-      
-      <div class="tab-content">
-        <div id="signup">   
-          <h1>Sign Up!</h1>
-          
-          <form action="/" method="post">
-          
-          <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                First Name<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label>
-                Last Name<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/>
-            </div>
+<main>
+  <ul class="nav" id="nav">
+ <!--   <li id="show-login">Login</li>
+  <li id="show-signup">Sign up</li>
+      ########################################
+             TO BE ADDED AS A STRETCH GOAL
+      #########################################
+  <li id="show-subscribe">Subscribe</li>
+  <li id="show-contact-us">Contact us</li>
+  <li id="show-forgot-password">Forgot password</li>-->
+</ul>
+  <form action="/users/login" method="POST">
+    <div class="wrapper theForm">
+      <div class="rec-prism">
+        <div class="face face-front">
+          <div class="content">
+            <h2>Sign in</h2>
+            <form>
+              <div class="field-wrapper">
+                <input type="text" name="username" placeholder="username">
+                <label>username</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="password" name="password" placeholder="password" autocomplete="new-password">
+                <label>password</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="submit">
+              </div>
+              <!--<span class="psw" id="show-forgot-password">Forgot Password?   </span>
+              <span class="signup" > Not a user?  <a id="show-signup">Sign up</a></span>-->
+            </form>
           </div>
-
-          <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Set A Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <button type="submit" class="button button-block"/>Get Laughing</button>
-          
-          </form>
-
         </div>
         
-        <div id="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form action="/" method="post">
-          
-            <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
+      <!-- <div class="face face-right">
+          <div class="content">
+            <h2>Sign up</h2>
+            <form onsubmit="event.preventDefault">
+              <div class="field-wrapper">
+                <input type="text" name="email" placeholder="email">
+                <label>e-mail</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="password" name="password" placeholder="password" autocomplete="new-password">
+                <label>password</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="password" name="password2" placeholder="password" autocomplete="new-password">
+                <label>re-enter password</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="submit">
+              </div>
+              <span class="singin" id="show-login">Already a user?  Sign in</span>
+            </form>
           </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
+        </div>-->
+        <!--
+        ########################################
+              TO BE ADDED AS A STRETCH GOAL
+        ########################################
+        <div class="face face-left">
+          <div class="content">
+            <h2>Contact us</h2>
+            <form onsubmit="event.preventDefault()">
+              <div class="field-wrapper">
+                <input type="text" name="name" placeholder="name">
+                <label>Name</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="text" name="email" placeholder="email">
+                <label>e-mail</label>
+              </div>
+              <div class="field-wrapper">
+                <textarea placeholder="your message"></textarea>
+                <label>your message</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="submit" class="show-thankyou">
+              </div>
+            </form>
           </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button class="button button-block"/>Log In</button>
-          
-          </form>
-
         </div>
-        
-      </div><!-- tab-content -->
-      
-</div> <!-- /form -->
+        <div class="face face-top">
+          <div class="content">
+            <h2>Subscribe</h2>
+            <small>Enter your email so we can send you the latest updates!</small>
+            <form onsubmit="event.preventDefault()">
+              <div class="field-wrapper">
+                <input type="text" name="email" placeholder="email">
+                <label>e-mail</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="submit" id="show-thank-you">
+              </div>
+            </form>
+          </div>
+          <div class="face face-back">
+          <div class="content">
+            <h2>Forgot your password?</h2>
+            <small>Enter your email so we can send you a reset link for your password</small>
+            <form onsubmit="event.preventDefault()">
+              <div class="field-wrapper">
+                <input type="text" name="email" placeholder="email">
+                <label>e-mail</label>
+              </div>
+              <div class="field-wrapper">
+                <input type="submit" onclick="showThankYou()">
+              </div>
+            </form>
+          </div>
+        </div>
+        </div>-->
+        <div class="face face-bottom">
+          <div class="content">
+            <div class="thank-you-msg">
+              Thank you!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</main>

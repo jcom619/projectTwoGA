@@ -1,215 +1,421 @@
-@import "compass/css3";
 
-$body-bg: #c1bdba;
-$form-bg: #13232f;
-$white: #ffffff;
-
-$main: #1ab188;
-$main-light: lighten($main, 5%);
-$main-dark: darken($main, 5%);
-
-$gray-light: #a0b3b0;
-$gray: #ddd;
-
+// Dimensions
+$prism-height: relative;
+$prism-length: 20rem;
+$prism-depth: $prism-length;
+$spacing: 20px;
+$br: 3px;
 $thin: 300;
 $normal: 400;
 $bold: 600;
 $br: 4px;
 
-*, *:before, *:after {
-    box-sizing: border-box;
-}
+// Colors
+$text-light: #fff;
+$text-dark: #666;
+$blue: #03a9f4;
+$smoke: #f9f9fa71;
+$coral: #ff5751;
+$navy-blue: #42509e;
+$green: #000000;
+$body-bg: #c1bdba;
+$form-bg: #111108;
+$white: #ffffff;
+$main: #b11a27;
+$main-light: lighten($main, 5%);
+$main-dark: darken($main, 5%);
+$gray-light: #a0b3b0;
+$gray: #ddd;
 
 html {
-    overflow-y: scroll;
+   overflow-y: scroll;
+   box-shadow: inset 0 0 40px black;
 }
 
 body {
-    // background:$body-bg;
-    // font-family: 'Titillium Web', sans-serif;
+   box-sizing: border-box;
+   min-height: 100vh;
+   text-align: center;
+   background-color: goldenrod;
+   background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+   bottom: 0;
+   padding: 0;
+   margin: 0;
 }
 
-a {
-    text-decoration: none;
+header {
+   top: 0;
+   width: 100vw;
+}
+.theForm {
+   padding-top: 10%;
+}
 
-    // color:$main;
-    transition: .5s ease;
+.jumbotron {
+   margin: 20% 5%;
+   padding: 20px;
+   border: 5px solid white;
+   border-radius: 20px;
+   font-family: 'chalkduster', sans-serif;
+   color: #fd060660;
+   text-shadow: 0px 0px 20px rgb(8, 6, 3) , 2px 2px 2px rgb(5, 3, 3);
+   box-shadow: 0 0 30px black, inset 0 0 30px black;
+   background: #fff2ee94;
 
-    &:hover {
-        // color:$main-dark;
-   
+}
+.title {
+  font-size: 90px;
+}
+.title1 {
+  margin-top: -5%;
+}
+
+.jokeBox {
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   margin: 10%;
+   border-radius: 50%;
+   border: 2px solid rgba(0, 0, 0, 0.281);
+   box-shadow: 0 0 30px black;
+   text-shadow: 2px 2px 5px #000 , 1px 1px 1px rgb(51, 4, 4);
+   padding: 40px;
+   color: rgba(247, 242, 242, 0.644);
+}
+
+.j-buttons {
+  color: #ae4d27;
+}
+.j-buttons:hover {
+  color: #251009;
+  text-shadow: 0px 0px 5px rgb(241, 234, 234) , 1px 1px 1px rgb(51, 4, 4);
+  cursor: pointer;
+}
+
+#square {
+  display: flex;
+  z-index: 1;
+  position: relative;
+  background-image: url("../img/laughingSmiley.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90% 90%;
+}
+
+#circle {
+  display: flex;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: 50%;
+  padding-top: 50%;
+  width: 100%;
+  border-radius: 50%;
+  border: 10opx solid blue;
+}
+
+#inner-circle {
+  position: absolute;
+  display: flex;
+  
+  background-color: rgba(46, 36, 11, 0.777);
+  
+  padding: 5%;
+  margin: 5%;
+  top: 0;
+  bottom: 0;
+  width: 80%;
+  height: 80%;
+  border-width: 4px;
+  border-color: #ae4d27;
+  border-style: solid;
+  border-radius: 50%;
+  flex-direction: column;
+  box-shadow: inset 0 0 50px black;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+   bottom: 0;
+}
+
+/* ===================================
+            HEADER STYLING
+====================================== */
+
+.main-header {
+
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   position: fixed;
+   color: #000;
+   font-size: 20px;
+   height: 85px;
+   width: 100vw;
+   z-index: 1;
+   transition: 0.4s ease-out;
+}
+
+.main-header a {
+   color: inherit;
+   text-decoration: none;
+}
+
+.main-header .nav-links {
+   display: flex;
+   justify-content: space-around;
+   list-style: none;
+}
+
+.main-header .nav-links .nav-link {
+   font-size: 25px;
+   text-shadow: 0 -1px 2px rgba(255, 255, 255, 0.4), 0 0 3px #640000, 0 0 3px #000;
+   transition: 0.4s ease-out;
+}
+
+.main-header .nav-links .nav-link a {
+   margin: 0.4rem;
+}
+
+.main-header .nav-links .nav-link :hover {
+   color: rgba(100, 0, 0, 0.8);
+   text-shadow: 0 1px 2px #000, 0 0 3px #fff;
+}
+
+.main-header.scrolled {
+   background: rgba(182, 159, 31, 0.678);
+   color: rgba(0, 0, 0, 0.8);
+   font-size: 18px;
+   height: 45px;
+   border-bottom: 3px solid rgba(100, 0, 0, 0.6);
+   box-shadow: 0 0 75px #000, 0 0 150px #000, 0 0 200px #000;
+   text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.4), 0 0 3px #640000, 0 0 3px #fff;
+}
+// =================================
+//             FORM
+// =================================
+
+
+// {
+//   box-sizing: border-box;
+// }
+
+// body{
+//   font-family: Tahoma,Verdana,Segoe,sans-serif; 
+//   font-size: 14px;
+//   background: #f6fffd;
+// //   padding: $spacing;
+//   text-align: center;
+// }
+.wrapper{
+  width: $prism-length;
+  height: $prism-height;
+  margin: 60px auto;
+  perspective: 600px;
+  text-align: left;
+}
+
+.rec-prism {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 0.5s ease-in;
+}
+
+.face {
+  position: absolute;
+  width: $prism-length;
+  height: $prism-height;
+  padding: $spacing;
+  background: $form-bg;
+  color: $coral;
+  border: 3px solid $smoke;
+  border-radius: 20px;
+
+  .content{
+    color: $text-light;
+    h2{
+      font-size: 1.2em;
+      color: $text-light;
     }
-}
+    .field-wrapper{
+      margin-top: $spacing*1.5;
+      position: relative;
 
-.form {
-    // background:rgba($form-bg,.9);
-    padding: 40px;
-    max-width: 600px;
-    margin: 40px auto;
+      label{
+        position: absolute;
+        pointer-events: none;
+        font-size: 0.85em;
+        top: 40%;
+        left: 0;
+        transform: translateY(-50%);
+        transition: all ease-in 0.25s;
+        color: lighten($text-dark, 20%);
+      }
+      input[type="text"], input[type="password"], input[type="submit"], textarea{
+        -webkit-appearance: none;
+        appearance: none;
+        &:focus{
+          outline: none;
+        }
+      }
+      input[type="text"], input[type="password"], textarea{
+        width: 100%;
+        border: none;
+        background: black;
+        line-height: 2em;
+        border-bottom: 1px solid $coral;
+        color: $text-light;
 
-    // border-radius:$br;
-    box-shadow: 0 4px 10px 4px rgba($form-bg, 0.3);
-}
-
-.tab-group {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 40px 0;
-
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    li a {
-        display: block;
-        text-decoration: none;
-        padding: 15px;
-
-        // background:rgba($gray-light,.25);
-        // color:$gray-light;
-        font-size: 20px;
-        float: left;
-        width: 50%;
-        text-align: center;
+        &::-webkit-input-placeholder{
+          opacity: 0;
+        }
+        &::-moz-placeholder{
+          opacity: 0;
+        }
+        &:-ms-input-placeholder{
+          opacity: 0;
+        }
+        &:-moz-placeholder {
+          opacity: 0;
+        }
+        &:focus, &:not(:placeholder-shown){
+          + label{
+            top: -35%;
+            color: $coral;
+          }
+        }
+      }
+      input[type="submit"]{
+        -webkit-appearance: none;
+        appearance: none;
         cursor: pointer;
-        transition: .5s ease;
+        width: 100%;
+        background: black;
+        line-height: 2em;
+        color: $text-light;
+        border: 1px solid $coral;
+        border-radius: 20px;
+        padding: $spacing/4;
 
-        &:hover {
-            // background:$main-dark;
-            // color:$white;
-       
+        &:hover{
+          opacity: 0.9;
         }
+        &:active{
+          transform: scale(0.96);
+        }
+      }
+      textarea{
+        resize: none;
+        line-height: 1em;
+        &:focus, &:not(:placeholder-shown){
+          + label{
+            top: -25%;
+          }
+        }
+      }
     }
-
-    .active a {
-        // background:$main;
-        // color:$white;
-   
-    }
-}
-
-.tab-content > div:last-child {
-    display: none;
-}
-
-h1 {
-    text-align: center;
-
-    // color:$white;
-    font-weight: $thin;
-    margin: 0 0 40px;
-}
-
-label {
+  }
+  
+  .thank-you-msg{
     position: absolute;
-    transform: translateY(6px);
-    left: 13px;
-
-    // color:rgba($white,.5);
-    transition: all 0.25s ease;
-    -webkit-backface-visibility: hidden;
-    pointer-events: none;
-    font-size: 22px;
-
-    .req {
-        margin: 2px;
-
-        // color:$main;
-   
+    width: 200px;
+    height: 130px;
+    text-align: center;
+    font-size: 2em;
+    color: $green;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    &:after{
+      position: absolute;
+      content: '';
+      width: 50px;
+      height: 25px;
+      border: 10px solid black;
+      border-right: 0;
+      border-top: 0;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
+      transform: translate(-50%, -50%) rotate(0deg) scale(0);
+      -webkit-animation: success ease-in 0.15s forwards;
+      animation: success ease-in 0.15s forwards;
+      animation-delay: 2.5s;
     }
+  }
+  &-front{ 
+    transform: rotateY(0deg) translateZ($prism-length/2);  
+  }
+  &-top{ 
+    height: $prism-depth;
+    transform: rotateX(90deg) translateZ($prism-depth/2); 
+  }
+  &-back{ 
+    transform: rotateY(180deg) translateZ($prism-length/2); 
+  }
+  &-right{ 
+    transform: rotateY(90deg) translateZ($prism-length/2); 
+  }
+  &-left{ 
+    transform: rotateY(-90deg) translateZ($prism-length/2); 
+  }
+  &-bottom{ 
+    height: $prism-depth;
+    transform: rotateX(-90deg) translateZ($prism-height - ($prism-depth/2));
+  }
 }
 
-label.active {
-    transform: translateY(50px);
-    left: 2px;
-    font-size: 14px;
-
-    .req {
-        opacity: 0;
-    }
-}
-
-label.highlight {
-    // color:$white;
-}
-
-input, textarea {
-    font-size: 22px;
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 5px 10px;
-    background: none;
-    background-image: none;
-
-    // border:1px solid $gray-light;
-    // color:$white;
-    border-radius: 0;
-    transition: border-color .25s ease, box-shadow .25s ease;
-
-    &:focus {
-        outline: 0;
-        border-color: $main;
-    }
-}
-
-textarea {
-    // border:2px solid $gray-light;
-    resize: vertical;
-}
-
-.field-wrap {
+.nav{
+  margin: $spacing 0;
+  padding: 0;
+  
+  li{
+    display: inline-block;
+    list-style-type: none;
+    font-size: 1em;
+    margin: 0 $spacing/2;
+    color: $navy-blue;
     position: relative;
-    margin-bottom: 40px;
+    cursor: pointer;
+    &:after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20px;
+      border-bottom: 1px solid $navy-blue;
+      transition: all ease-in 0.25s;
+    }
+    &:hover:after{
+      width: 100%;
+    }
+  }
 }
 
-.top-row {
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    > div {
-        float: left;
-        width: 48%;
-        margin-right: 4%;
-
-        &:last-child {
-            margin: 0;
-        }
-    }
+.psw, .signup, .singin{
+  display: block;
+  margin: $spacing 0;
+  font-size: 0.75em;
+  text-align: center;
+  color: $navy-blue;
+  cursor: pointer;
 }
 
-.button {
-    border: 0;
-    outline: none;
-    border-radius: 0;
-    padding: 15px 0;
-    font-size: 2rem;
-    font-weight: $bold;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-
-    // background:$main;
-    // color:$white;
-    transition: all 0.5s ease;
-    -webkit-appearance: none;
-
-    &:hover, &:focus {
-        // background:$main-dark;
-   
+small{
+  font-size: 0.7em;
+}
+@keyframes success{
+    from {
+       -webkit-transform: translate(-50%, -50%) rotate(0) scale(0);
+       }
+    to {
+      -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
     }
 }
 
-.button-block {
-    display: block;
-    width: 100%;
-}
 
-.forgot {
-    margin-top: -20px;
-    text-align: right;
-}
