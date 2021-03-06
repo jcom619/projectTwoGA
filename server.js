@@ -7,16 +7,36 @@ const rowdyResults = rowdy.begin(app);
 const axios = require("axios");
 const cryptoJS = require("crypto-js");
 const db = require("./models");
+const cookieParser = require("cookie-parser");
 const PORT = process.env.PORT || 3000;
 
+// ============================================ //
+//                 MIDDLE...WHERE?
+// ============================================ //
 app.use(express.static("public"));
-app.use(
-  express.urlencoded({
-    extended: false,
-  })
-);
+app.use(express.urlencoded({ extended: false }));
 app.use(require("cookie-parser")());
 app.use(require("morgan")("tiny"));
+
+//
+app.use(async (req, res, next) => {
+  if (req.cookies.userId) {
+    const decryptedId = cryptoJS.AES.decrypt(
+      req.cookies.userId,
+      "asdfasdf"
+    ).toString(cryptoJS.enc.Utf8);
+    console.log(decryptedId);
+    const user = await db.user.findOne({
+      where: {
+        id: decryptedId,
+      },
+    });
+    res.locals.user = user;
+  } else {
+    res.locals.user = null;
+  }
+  next();
+});
 
 // ============================================= //
 //                   STATIC FILES
@@ -36,27 +56,36 @@ app.use(expressLayouts);
 
 app.use("/users", require("./controllers/usersController.js"));
 
-// index/home page
-app.get("/", (req, res) => {
-  res.render("pages/index");
+// home page
+app.get("/", async (req, res) => {
+  try {
+    const results = await axios.get(
+      "https://geek-jokes.sameerkumar.website/api?format=json"
+    );
+    // console.log(results.data);
+    res.render("pages/index", {
+      display: results.data,
+    });
+  } catch (err) {
+    console.log(err);
+  }
 });
-// login
-// app.get("/login", (req, res) => {
-//   res.render("pages/login");
-// });
+// favorites
+app.get("/favorites", async (req, res) => {
+  const user = await db.user.findOne({
+    where: { id: res.locals.user.id },
+    include: [db.saved_joke],
+  });
+  console.log(user);
+  res.render("pages/favorites", { user: user });
+  console.log("see this log?", res.locals.user);
+});
 
-// app.get("/signup", (req, res) => {
-//   res.render("pages/signup");
-// });
-
-// app.post("/users", (req, res) => {
-//   console.log(req.body);
-//   res.send("?");
-// });
-
-// archive page
-app.get("/archived", (req, res) => {
-  res.render("pages/archived");
+app.post("/favorites", (req, res) => {
+  res.locals.user.createSaved_joke({ joke_content: req.body.joke });
+  res.redirect("/favorites");
+  console.log(req.body);
+  // console.log(res.locals.user);
 });
 
 // about page
@@ -68,23 +97,6 @@ app.get("/about", (req, res) => {
 app.get("/favorites", (req, res) => {
   res.render("pages/about");
 });
-
-// API
-async function jokeApiRequest() {
-  const config = {
-    method: "get",
-    url: "https://geek-jokes.sameerkumar.website/api?format=json",
-  };
-  let res = await axios(config);
-
-  console.log(res.status);
-}
-
-jokeApiRequest();
-
-async function makeAFunny() {
-  const results = await axios.get();
-}
 
 // ============================================= //
 

@@ -4,24 +4,16 @@
           <a href="/">Home</a>
         </li>
         <li class="nav-link">
-          <a href="/archived">Joke Archive</a>
-        </li>
-        <li class="nav-link">
-          <a href="/favorites">Favorites</a>
-        </li>
-        <li class="nav-link">
           <a href="/about">About</a>
         </li>
       </ul>
-      <div>
-        <a href="/login">
-          Sign In
-        </a>
-        <span> <em><strong> / </strong></em> </span>
-        <a href="/users/signup">
-           Sign Up
-        </a>
-      </div>
 
+    <% if(user) { %>
 
+    <%= user.username %>
+    
+
+    <% }else{ %>
+
+    <% } %>
     </header>

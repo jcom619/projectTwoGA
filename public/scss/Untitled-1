@@ -1,0 +1,46 @@
+condition login/out at navbar
+
+change content instead of entire page (requires fixing formScript first)
+
+remove archive
+
+
+app.post('/favorites', async (req, res) => {
+   if (res.locals.user) {
+   }
+})
+
+
+
+
+.post('/', async (req, res) => {
+    try {
+        const [newJoke_content, created] = await db.joke_content.findOrCreate({
+            where: {
+                name: req.body.name
+            }
+        })
+        // console.log(created);
+        res.locals.user.addSaved_joke(newSaved_joke);
+        res.redirect(`/pokemons`)
+    } catch (err) {
+        console.log(err)
+    }
+})
+
+
+
+
+use the user
+method to craete a joke and add it to the user
+redirect to GET /favorites
+res.redirect("/favorites");
+ if the user is not logged in
+res.redirect('/login') to login page
+
+
+const savedJoke = db.saved_joke.create({
+   joke_content: 
+   rating: null,
+   userId: user.id
+})

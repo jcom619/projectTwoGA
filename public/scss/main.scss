@@ -36,13 +36,14 @@ body {
    box-sizing: border-box;
    min-height: 100vh;
    text-align: center;
-   background-color: goldenrod;
+   background-color: rgba(0, 0, 0, 0.603);
    background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
    bottom: 0;
    padding: 0;
    margin: 0;
 }
+
 
 header {
    top: 0;
@@ -58,10 +59,10 @@ header {
    border: 5px solid white;
    border-radius: 20px;
    font-family: 'chalkduster', sans-serif;
-   color: #fd060660;
-   text-shadow: 0px 0px 20px rgb(8, 6, 3) , 2px 2px 2px rgb(5, 3, 3);
+   color: #d1c40985;
+   text-shadow: 0px 0px 10px rgb(8, 6, 3) , 2px 2px 2px rgb(5, 3, 3);
    box-shadow: 0 0 30px black, inset 0 0 30px black;
-   background: #fff2ee94;
+   background: #14141494;
 
 }
 .title {
@@ -144,12 +145,12 @@ footer {
 ====================================== */
 
 .main-header {
-
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
    display: flex;
    align-items: center;
    justify-content: space-evenly;
    position: fixed;
-   color: #000;
+   color: rgba(0, 0, 0, 0.8);
    font-size: 20px;
    height: 85px;
    width: 100vw;
@@ -170,7 +171,7 @@ footer {
 
 .main-header .nav-links .nav-link {
    font-size: 25px;
-   text-shadow: 0 -1px 2px rgba(255, 255, 255, 0.4), 0 0 3px #640000, 0 0 3px #000;
+   text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.4), 0 0 2px #640000, 0 0 3px #000;
    transition: 0.4s ease-out;
 }
 
@@ -180,17 +181,17 @@ footer {
 
 .main-header .nav-links .nav-link :hover {
    color: rgba(100, 0, 0, 0.8);
-   text-shadow: 0 1px 2px #000, 0 0 3px #fff;
+   text-shadow: 0 -1px 2px #000, 0 0 2px rgb(22, 21, 21);
 }
 
 .main-header.scrolled {
-   background: rgba(182, 159, 31, 0.678);
-   color: rgba(0, 0, 0, 0.8);
+   background: rgba(10, 10, 10, 0.874);
+   color: rgba(0, 0, 0, 0.9);
    font-size: 18px;
    height: 45px;
    border-bottom: 3px solid rgba(100, 0, 0, 0.6);
    box-shadow: 0 0 75px #000, 0 0 150px #000, 0 0 200px #000;
-   text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.4), 0 0 3px #640000, 0 0 3px #fff;
+   text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.4), 0 0 3px #640000, 0 0 3px rgba(255, 255, 255, 0.589);
 }
 // =================================
 //             FORM

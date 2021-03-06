@@ -1,12 +1,12 @@
 html { overflow-y: scroll; box-shadow: inset 0 0 40px black; }
 
-body { box-sizing: border-box; min-height: 100vh; text-align: center; background-color: goldenrod; background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png"); /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ bottom: 0; padding: 0; margin: 0; }
+body { box-sizing: border-box; min-height: 100vh; text-align: center; background-color: rgba(0, 0, 0, 0.603); background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png"); /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ bottom: 0; padding: 0; margin: 0; }
 
 header { top: 0; width: 100vw; }
 
 .theForm { padding-top: 10%; }
 
-.jumbotron { margin: 20% 5%; padding: 20px; border: 5px solid white; border-radius: 20px; font-family: 'chalkduster', sans-serif; color: #fd060660; text-shadow: 0px 0px 20px #080603, 2px 2px 2px #050303; box-shadow: 0 0 30px black, inset 0 0 30px black; background: #fff2ee94; }
+.jumbotron { margin: 20% 5%; padding: 20px; border: 5px solid white; border-radius: 20px; font-family: 'chalkduster', sans-serif; color: #d1c40985; text-shadow: 0px 0px 10px #080603, 2px 2px 2px #050303; box-shadow: 0 0 30px black, inset 0 0 30px black; background: #14141494; }
 
 .title { font-size: 90px; }
 
@@ -27,19 +27,19 @@ header { top: 0; width: 100vw; }
 footer { bottom: 0; }
 
 /* =================================== HEADER STYLING ====================================== */
-.main-header { display: flex; align-items: center; justify-content: space-evenly; position: fixed; color: #000; font-size: 20px; height: 85px; width: 100vw; z-index: 1; transition: 0.4s ease-out; }
+.main-header { font-family: Verdana, Geneva, Tahoma, sans-serif; display: flex; align-items: center; justify-content: space-evenly; position: fixed; color: rgba(0, 0, 0, 0.8); font-size: 20px; height: 85px; width: 100vw; z-index: 1; transition: 0.4s ease-out; }
 
 .main-header a { color: inherit; text-decoration: none; }
 
 .main-header .nav-links { display: flex; justify-content: space-around; list-style: none; }
 
-.main-header .nav-links .nav-link { font-size: 25px; text-shadow: 0 -1px 2px rgba(255, 255, 255, 0.4), 0 0 3px #640000, 0 0 3px #000; transition: 0.4s ease-out; }
+.main-header .nav-links .nav-link { font-size: 25px; text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.4), 0 0 2px #640000, 0 0 3px #000; transition: 0.4s ease-out; }
 
 .main-header .nav-links .nav-link a { margin: 0.4rem; }
 
-.main-header .nav-links .nav-link :hover { color: rgba(100, 0, 0, 0.8); text-shadow: 0 1px 2px #000, 0 0 3px #fff; }
+.main-header .nav-links .nav-link :hover { color: rgba(100, 0, 0, 0.8); text-shadow: 0 -1px 2px #000, 0 0 2px #161515; }
 
-.main-header.scrolled { background: rgba(182, 159, 31, 0.678); color: rgba(0, 0, 0, 0.8); font-size: 18px; height: 45px; border-bottom: 3px solid rgba(100, 0, 0, 0.6); box-shadow: 0 0 75px #000, 0 0 150px #000, 0 0 200px #000; text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.4), 0 0 3px #640000, 0 0 3px #fff; }
+.main-header.scrolled { background: rgba(10, 10, 10, 0.874); color: rgba(0, 0, 0, 0.9); font-size: 18px; height: 45px; border-bottom: 3px solid rgba(100, 0, 0, 0.6); box-shadow: 0 0 75px #000, 0 0 150px #000, 0 0 200px #000; text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.4), 0 0 3px #640000, 0 0 3px rgba(255, 255, 255, 0.589); }
 
 .wrapper { width: 20rem; height: relative; margin: 60px auto; perspective: 600px; text-align: left; }
 
