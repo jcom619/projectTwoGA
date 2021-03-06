@@ -6,14 +6,20 @@
         <li class="nav-link">
           <a href="/about">About</a>
         </li>
-      </ul>
-
-    <% if(user) { %>
-
-    <%= user.username %>
-    
-
-    <% }else{ %>
-
-    <% } %>
+        
+        <% if(user) { %>
+        <li class="nav-link">
+          <a href="/favorites"><%- 'favorites' %></a>
+        </li>
+      
+      <p><a href="users/logout"><%- 'logout?' %></a></p>
+        <% }else{ %>
+          </ul>
+          <p>
+          <a href="/users/login"><%- 'login' %>
+          </a>
+          /
+          <a href="/users/signup"><%- 'Sign Up' %>p</a>
+        </p>
+        <% } %>
     </header>
