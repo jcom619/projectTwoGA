@@ -6,7 +6,7 @@ header { top: 0; width: 100vw; }
 
 .theForm { padding-top: 10%; }
 
-.jumbotron { margin: 20% 5%; padding: 20px; border: 5px solid white; border-radius: 20px; font-family: 'chalkduster', sans-serif; color: #d1c40985; text-shadow: 0px 0px 10px #080603, 2px 2px 2px #050303; box-shadow: 0 0 30px black, inset 0 0 30px black; background: #14141494; }
+.jumbotron { margin: 20% 5%; font-family: 'chalkduster', sans-serif; color: #d1c40985; text-shadow: 0px 0px 10px #080603, 2px 2px 2px #050303; }
 
 .title { font-size: 90px; }
 
@@ -111,3 +111,25 @@ small { font-size: 0.7em; }
 
 @keyframes success { from { -webkit-transform: translate(-50%, -50%) rotate(0) scale(0); }
   to { -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1); } }
+
+.parallax { height: 500px; /* fallback for older browsers */ height: 100vh; overflow-x: hidden; overflow-y: auto; -webkit-perspective: 300px; perspective: 300px; -webkit-perspective-origin-x: 100%; perspective-origin-x: 100%; }
+
+.parallax__group { position: relative; height: 500px; /* fallback for older browsers */ height: 100vh; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; }
+
+.parallax__layer { position: absolute; top: 0; left: 0; right: 0; bottom: 0; -webkit-transform-origin-x: 100%; transform-origin-x: 100%; }
+
+.parallax__layer--fore { -webkit-transform: translateZ(90px) scale(0.7); transform: translateZ(90px) scale(0.7); z-index: 1; }
+
+.parallax__layer--base { -webkit-transform: translateZ(0); transform: translateZ(0); z-index: 4; }
+
+.parallax__layer--back { -webkit-transform: translateZ(-300px) scale(2); transform: translateZ(-300px) scale(2); z-index: 3; }
+
+.parallax__layer--deep { -webkit-transform: translateZ(-600px) scale(3); transform: translateZ(-600px) scale(3); z-index: 2; }
+
+.neonShadow { border-radius: 50px; transition: 0.3s; animation: glow 1s infinite; transition: 0.5s; }
+
+.neonShadow:hover { border-radius: 5px; background-color: #250435; transition: 0.5s; }
+
+@keyframes glow { 0% { box-shadow: 5px 5px 20px #5d34a8, -5px -5px 20px #5d34a8; }
+  50% { box-shadow: 5px 5px 20px #000202, -5px -5px 20px black; }
+  100% { box-shadow: 5px 5px 20px #5d34a8, -5px -5px 20px #5d34a8; } }

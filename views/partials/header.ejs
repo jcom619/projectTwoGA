@@ -1,4 +1,5 @@
   <header class="main-header">
+ 
       <ul class="nav-links">
         <li class="nav-link">
           <a href="/">Home</a>
@@ -7,19 +8,16 @@
           <a href="/about">About</a>
         </li>
         
-        <% if(user) { %>
+         <% if(user) { %>
         <li class="nav-link">
           <a href="/favorites"><%- 'favorites' %></a>
         </li>
-      
-      <p><a href="users/logout"><%- 'logout?' %></a></p>
+
+        <li class="nav-link"><a href="<%- '/users/logout' %>"><%- 'logout?' %></a></li>
+
         <% }else{ %>
-          </ul>
-          <p>
-          <a href="/users/login"><%- 'login' %>
-          </a>
-          /
-          <a href="/users/signup"><%- 'Sign Up' %>p</a>
-        </p>
+
+        <li class="nav-link"><a href="<%- '/users/login' %>"><%- 'login' %></a></li>
+
         <% } %>
     </header>
