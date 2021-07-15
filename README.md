@@ -29,7 +29,7 @@ li {
 </style>
 ---
 # PROJECT TWO - *joke a day*
-anapp to tell you a joke, signup and save you favorites
+an app to tell you a joke, signup and save you favorites
 ## SQL schema
 
 ![frame1](/readme_imgs/erd.png)
