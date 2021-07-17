@@ -1,35 +1,6 @@
-<style>
-body {
-   background:rgba(200,200,200, 0.03);
-   box-shadow: inset 0 0 100px rgba(255,255,255,0.2),inset 0 0 10px rgba(100,25,225,0.28);
-   text-shadow: 1px 1px 13px black;
-   
-}
-img {
-   border-radius: 20px;
-    box-shadow: 0 0 90px black;
-}
-h1 {
-   box-shadow: 0 0 900px grey;
-   font-family: chalkboard;
-   color: rgba(20,127,220, 0.8);
-   border-radius: 10px;
-   padding-top: 10px;
-}
-h2 {
-   padding-top: 50px;
-   color: rgba(20,127,220, 0.9);
-}
-h3 {
-   color: rgba(20,110,250)
-}
-li {
-   color: rgba(20,127,220, 0.8);
-}
-</style>
 ---
 # PROJECT TWO - *joke a day*
-anapp to tell you a joke, signup and save you favorites
+an app to tell you a joke, signup and save you favorites
 ## SQL schema
 
 ![frame1](/readme_imgs/erd.png)
