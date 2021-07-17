@@ -7,24 +7,24 @@
       <div class="title"></div>
        <div class="parallax__layer parallax__layer--base">
       <div class="jumbotron">
-            <h1 class="title"> <strong>Dumb Jokes</strong></h1>
-            <h1 class="title1">For<br><em>Smart People</em></h1>
-            <h3>just for the LOL's</h3>
-         </div>
-    </div>
-
-    </div>
-  </div>
-   <div id="group2" class="parallax__group">
-<div class="parallax__layer parallax__layer--back">
-      <div class="jokeBox">
+           
+             <div class="joke-box">
          <div id="square">
             <div id="circle">
             <div id="inner-circle">
             <h1  id="greet" >A Dumb Joke...<hr></h1>
                <h2 class="joke">
-                  <%= display.joke %>
-               </h2>
+                  <!--<%= display.joke %>-->
+               </h2><h3>just for the LOL's</h3>
+  </div>
+
+           
+    </div>
+
+    </div>
+  </div>
+
+      
 
 
 <% if(user) { %>
@@ -33,15 +33,19 @@
               <input class="bkgrndColor neonShadow j-buttons" type="submit" value="save">
            </form>
            <% } else { %>
-           <form method="GET" action="/users/login">
+           <form method="GET" action="/users/signup">
               <input type="hidden" name="joke" value="<%= display.joke %>" >
-              <input class="bkgrndColor neonShadow j-buttons" type="submit" value="Join">
+              <input class="bkgrndColor neonShadow j-buttons" type="submit" value="login">
            </form>
             <% } %>
-  </div>
-  </div>
+  </div> </div>
             </div>
-            </div>
+         </div>
+   <div id="group2" class="parallax__group">
+<div class="parallax__layer parallax__layer--back">
+ <h1 class="title"> <strong>Dumb Jokes</strong></h1>
+            <h1 class="title1">For<br><em>Smart People</em></h1>
+           
          </div>
       </div>
     </div>

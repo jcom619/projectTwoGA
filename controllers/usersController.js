@@ -32,7 +32,7 @@ router.get("/login", (req, res) => {
 router.post("/login", async (req, res) => {
   const user = await db.user.findOne({
     where: {
-      username: req.body.username,
+      email: req.body.email,
     },
   });
 
@@ -51,13 +51,13 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-//  router.get('/profile', async (req, res) => {
-//    if (!res.locals.user) {
-//      res.redirect('/users/login')
-//      return
-//    }
+router.get('/profile', async (_req, res) => {
+  if (!res.locals.user) {
+    res.redirect('/users/login')
+    return
+  }
 
-//    res.render('users/profile')
-//  })
+  res.render('users/profile')
+})
 
 module.exports = router;
